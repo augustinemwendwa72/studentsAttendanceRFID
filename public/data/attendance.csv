@@ -1,0 +1,6 @@
+admission_number,name,rfid_card_number,date,time_in,time_out,status
+STU001,John Smith,A1B2C3D4,2026-03-03,07:45:00,14:30:00,present
+STU002,Jane Doe,E5F6G7H8,2026-03-03,08:15:00,14:45:00,late
+STU003,Michael Johnson,I9J0K1L2,2026-03-03,07:30:00,14:00:00,present
+STU004,Emily Williams,M3N4O5P6,2026-03-03,07:50:00,14:20:00,present
+STU005,David Brown,Q7R8S9T0,2026-03-03,,13:47:22,absent
