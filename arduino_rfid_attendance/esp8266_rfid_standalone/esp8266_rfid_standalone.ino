@@ -108,7 +108,7 @@ void connectWiFi() {
     Serial.println("Starting WiFi connection...");
     Serial.print("SSID: ");
     Serial.println(ssid);
-    
+    serialOut.println("Connecting to: " + String(ssid));
     WiFi.begin(ssid, password);
     
     int attempts = 0;
@@ -136,15 +136,18 @@ void connectWiFi() {
         switch(WiFi.status()) {
             case WL_NO_SSID_AVAIL:
                 Serial.println("Error: SSID not available");
+                serialOut.println("Wifi not found");
                 break;
             case WL_CONNECT_FAILED:
                 Serial.println("Error: Connection failed (wrong password?)");
+                serialOut.println("Wrong Password-wifi");
                 break;
             case WL_IDLE_STATUS:
                 Serial.println("Error: WiFi idle - module not started");
                 break;
             case WL_DISCONNECTED:
                 Serial.println("Error: WiFi disconnected");
+                serialOut.println("Wifi Disconnected");
                 break;
             default:
                 Serial.println("Error: Unknown error");
@@ -157,6 +160,8 @@ void connectWiFi() {
 // ==================== SEND ATTENDANCE TO SERVER ====================
 void sendAttendance(String rfidCard) {
     Serial.println("Connecting to server...");
+    serialOut.println("Sending to server");
+    delay(1000);
     
     WiFiClient client;
     
